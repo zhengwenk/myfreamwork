@@ -25,7 +25,7 @@ class Application extends Containers
 	protected static $aliasesRegistered = false;
 	public $basePath = '';
 	public $namedRoutes = array();
-
+	protected $env;
 	protected $aliases = array();
 	protected $loadedProviders = array();
 	protected $loadedConfigurations = array();
@@ -54,6 +54,7 @@ class Application extends Containers
 	public function __construct($basePath = null)
 	{
 		date_default_timezone_set(env('APP_TIMEZONE', 'PRC'));
+		$this->env = $this->environment();
 		$this->basePath = $basePath;
 		$this->bootstrapContainer();
 		$this->registerErrorHandling();

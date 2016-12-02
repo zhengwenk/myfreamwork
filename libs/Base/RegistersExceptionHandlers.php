@@ -39,7 +39,12 @@ trait RegistersExceptionHandlers
 	 */
 	protected function registerErrorHandling()
 	{
-		error_reporting(-1);
+
+		error_reporting(0);
+
+		if ($this->env != 'production') {
+			error_reporting(-1);
+		}
 
 		set_error_handler(function ($level, $message, $file = '', $line = 0) {
 			if (error_reporting() & $level) {

@@ -15,7 +15,7 @@ class GetSiteConfig extends SiteBase
 		$this->rules = array(
 			'site_id' => 'required|integer'
 		);
-		$this->methods = array('checkSiteUid');
+		//$this->methods = array('checkSiteUid');
 		parent::__construct($app);
 	}
 

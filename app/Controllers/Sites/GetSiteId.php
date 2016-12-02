@@ -5,6 +5,7 @@ namespace App\Controllers\Sites;
 use Libs\Base\Controllers;
 use Libs\Base\Application;
 use App\Model\Sites\Site as SiteModel;
+use Libs\Support\Str;
 
 
 class GetSiteId extends Controllers
@@ -18,7 +19,12 @@ class GetSiteId extends Controllers
 
 	public function go()
 	{
-		$domain = str_replace('site-', '', $this->params['domain']);
+		if (Str::contains($this->params['domain'], 'site-')) {
+			$domain = str_replace('site-', '', $this->params['domain']);
+		} else {
+			$domain = $this->params['domain'];
+		}
+
 		$SiteModel = new SiteModel;
 
 		$siteId = $SiteModel->GetSiteIdByDomain($domain);
