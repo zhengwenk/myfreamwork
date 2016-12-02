@@ -1,0 +1,33 @@
+{
+  "name": "lark/api",
+  "description": "lark api",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "lark",
+      "email": "lark@larkapp.com"
+    }
+  ],
+  "require" : {
+    "symfony/http-foundation": "3.1.*",
+    "symfony/http-kernel": "^3.1",
+    "vlucas/phpdotenv" : "2.4.*",
+    "nikic/fast-route": "^1.0",
+    "wixel/gump": "dev-master",
+    "paragonie/random_compat": "^2.0",
+    "swiftmailer/swiftmailer": "^5.4",
+    "qiniu/php-sdk": "^7.1",
+    "monolog/monolog": "^1.21",
+    "guzzlehttp/guzzle": "^6.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Libs\\" : "libs/",
+      "App\\" : "app/"
+    },
+    "files": [
+      "libs/Support/helpers.php"
+    ]
+  }
+}
