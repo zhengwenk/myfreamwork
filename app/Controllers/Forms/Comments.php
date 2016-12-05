@@ -14,11 +14,12 @@ class Comments extends Controllers
 		$this->keys = array('site_id', 'tag', 'name', 'email', 'phone', 'comments');
 		$this->rules = array(
 			'site_id' => 'required|integer',
-			'tag' => 'required|max_len,12|min_len,6',
+			'tag' => 'required|max_len,4|min_len,2',
 			'name' => 'max_len,40',
 			'email' => 'valid_email|max_len,320',
 			'phone' => 'max_len,11',
-			'comments' => 'max_len,420'
+			'qq' => 'max_len,12|min_len,5',
+			'comments' => 'max_len,140'
 		);
 		parent::__construct($app);
 	}

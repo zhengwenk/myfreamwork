@@ -16,7 +16,7 @@ class Register extends Controllers
 		$this->rules = array(
 			'account' => 'required|valid_email|min_len, 10|max_len, 320',
 			'password' => 'required|min_len, 6|max_len,32',
-			'nickName' => 'required|max_len,30'
+			'nickName' => 'required|max_len,10'
 		);
 
 		$this->filter = array(

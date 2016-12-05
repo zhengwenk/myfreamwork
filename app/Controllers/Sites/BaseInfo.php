@@ -14,8 +14,8 @@ class BaseInfo extends SiteBase
 		$this->isReportLogin = true;
 		$this->rules = array(
 			'site_id' => 'required|integer',
-			'site_name' => 'required|max_len, 100',
-			'site_typeid' => 'required|max_numeric, 100',
+			'site_name' => 'required|max_len,30',
+			'site_typeid' => 'required|max_numeric,100',
 			'site_desc' => 'max_len, 100',
 			'site_keyword' => 'max_len, 30'
 		);
