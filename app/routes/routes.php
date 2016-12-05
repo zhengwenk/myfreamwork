@@ -24,3 +24,7 @@ $app->group(['namespace' => 'App\Controllers\Resource'], function ($app) {
 $app->group(['namespace' => 'App\Controllers\Piwik'], function ($app) {
 	require 'piwik.php';
 });
+
+$app->group(['namespace' => 'App\Controllers\Forms'], function ($app) {
+	require 'forms.php';
+});

@@ -9,6 +9,8 @@ class Base
 	const PARAMS_EMPTY = '请求参数不允许全部为空';
 	const UPDATE_DATA_NOTALLOW = '更新字段不被允许';
 	const HTTP_REQUEST_ERROR = '请求失败-';
+	const OPERATION_SUCCESS = 'success';
+	const OPERATION_FAILURE = 'failure';
 
 	public static $baseCode = array();
 }
