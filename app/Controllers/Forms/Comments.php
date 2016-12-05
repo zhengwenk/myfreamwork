@@ -11,9 +11,10 @@ class Comments extends Controllers
 {
 	public function __construct(Application $app)
 	{
-		$this->keys = array('site_id', 'name', 'email', 'phone', 'comments');
+		$this->keys = array('site_id', 'tag', 'name', 'email', 'phone', 'comments');
 		$this->rules = array(
 			'site_id' => 'required|integer',
+			'tag' => 'required|max_len,12|min_len,6',
 			'name' => 'max_len,40',
 			'email' => 'valid_email|max_len,320',
 			'phone' => 'max_len,11',
