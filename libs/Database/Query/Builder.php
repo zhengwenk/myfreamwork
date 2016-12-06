@@ -1471,7 +1471,7 @@ class Builder
 	 */
 	public function forPage($page, $perPage = 15)
 	{
-		return $this->skip(($page - 1) * $perPage)->take($perPage);
+		return $this->skip(intval($page-1) * $perPage)->take($perPage);
 	}
 
 	/**
@@ -1648,9 +1648,9 @@ class Builder
 	 * @param  int|null  $page
 	 * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
 	 */
-	public function paginate($perPage = 15, $columns = ['*'], $pageName = 'page', $page = null)
+	public function paginate($perPage = 15, $columns = ['*'], $pageName = 'offset', $page = null)
 	{
-		$page = $page ?: Paginator::resolveCurrentPage($pageName);
+		$page = $page ?: Paginator::resolveCurrentPage($pageName, $perPage);
 
 		$total = $this->getCountForPagination($columns);
 

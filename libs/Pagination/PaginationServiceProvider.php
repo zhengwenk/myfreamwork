@@ -17,7 +17,7 @@ class PaginationServiceProvider extends ServiceProvider
 			$offset = $this->app['request']->get($pageName);
 
 			if (filter_var($offset, FILTER_VALIDATE_INT) !== false && (int) $offset >= 0) {
-				return floor($offset/$perPage);
+				return (int) (floor($offset/$perPage)+1);
 			}
 
 			return 0;

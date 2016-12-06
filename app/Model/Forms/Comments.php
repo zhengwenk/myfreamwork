@@ -13,4 +13,13 @@ class Comments extends Model
 		$data['siteid'] = $siteId;
 		return $this->getDB()->insert($data);
 	}
+
+	public function GetListBySiteId($siteId, $limit = 10)
+	{
+		return $this->getDB()->select('tag', 'name', 'email', 'qq', 'phone', 'comments')
+			->where('siteid', $siteId)
+			->orderBy('addtime', 'desc')
+			->paginate($limit)
+			->toArray();
+	}
 }
